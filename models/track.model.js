@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
+import { artistSchema } from "./artist.model.js";
 
 const trackSchema = new Schema(
   {
@@ -7,7 +8,6 @@ const trackSchema = new Schema(
       type: String,
       required: true,
     },
-
     imageURL: {
       type: String,
       required: true,
@@ -16,11 +16,11 @@ const trackSchema = new Schema(
       type: String,
       required: true,
     },
-    album: {
+    albumId: {
       type: String,
     },
     artist: {
-      type: String,
+      type: [artistSchema],
       required: true,
     },
     language: {
@@ -29,10 +29,10 @@ const trackSchema = new Schema(
     },
     category: {
       type: String,
-      required: true,
+      required:true
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("tracks", trackSchema);
+export default mongoose.model("track", trackSchema);

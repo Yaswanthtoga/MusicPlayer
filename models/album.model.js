@@ -7,6 +7,7 @@ const albumSchema = new Schema(
     name: {
       type: String,
       required: true,
+      unique:true,
     },
     imageURL: {
       type: String,

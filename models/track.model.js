@@ -19,7 +19,7 @@ const trackSchema = new Schema(
     albumId: {
       type: String,
     },
-    artist: {
+    artists: {
       type: [artistSchema],
       required: true,
     },

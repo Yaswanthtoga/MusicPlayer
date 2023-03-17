@@ -8,12 +8,11 @@ export const artistSchema = new Schema(
     },
     imageURL: {
       type: String,
-      required: true,
+      // required: true,
     },
     category:{
       type:String,
       required:true
     }
-  },
-  { timestamps: true }
+  }
 );

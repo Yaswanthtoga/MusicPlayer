@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import authRoute from './routes/auth.route.js';
 import albumRoute from './routes/album.route.js';
+import trackRoute from './routes/track.route.js';
+
 dotenv.config();
 
 
@@ -27,6 +29,7 @@ app.use(express.json());
 
 app.use('/api/auth',authRoute);
 app.use('/api/album',albumRoute);
+app.use('/api/track',trackRoute);
 
 
 app.listen(8000,()=>{
